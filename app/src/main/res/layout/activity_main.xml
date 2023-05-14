@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/mainLayout">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Created by Mulugeta"
+        android:textSize="10sp"
+        android:textColor="@color/grey"
+        android:layout_below="@id/btnLayout"
+        android:layout_marginTop="250dp"/>
+
+<!--EditTexts-->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtLayout"
+        android:layout_alignStart="@id/btnLayout"
+        android:layout_alignEnd="@id/btnLayout"
+        android:layout_marginBottom="25dp"
+        android:layout_above="@id/btnLayout"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:textAlignment="viewStart"
+            android:id="@+id/edtx"
+            android:hint="@string/hint1"
+            android:textColorHint="#9A606060"
+            android:padding="15dp"
+            android:elevation="5dp"
+            android:background="@drawable/edit_text_border"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:textAlignment="viewStart"
+            android:padding="15dp"
+            android:id="@+id/edty"
+            android:hint="@string/hint2"
+            android:textColorHint="#9A606060"
+            android:layout_below="@id/edtx"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/edit_text_border"
+            android:elevation="5dp"
+            />
+    </RelativeLayout>
+
+    <!--Button Group-->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnLayout"
+        android:layout_centerInParent="true"
+        >
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.Material3.Button"
+            android:text="@string/btn1"
+            android:id="@+id/btn1"/>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:text="@string/btn2"
+            android:id="@+id/btn2"
+            android:layout_toEndOf="@id/btn1"
+            android:layout_marginStart="10dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/resultLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@id/btnLayout"
+        android:background="@drawable/myrec"
+        android:elevation="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:layout_alignStart="@id/btnLayout"
+        android:layout_alignEnd="@id/btnLayout"
+        android:textAlignment="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/resultTxt"
+            android:layout_centerInParent="true"
+            android:textColor="@color/grey"
+            android:textSize="20dp"
+            android:textAlignment="center"/>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Retta dei Minimi Quadrati</string>
+    <string name="btn1">Retta dei Minimi Quadrati</string>
+    <string name="btn2">Anulla</string>
+    <string name="hint1">Valori X: x.xxxx, x.xxxx, x.xxxx, ...</string>
+    <string name="hint2">Valori Y: y.yyyy, y.yyyy, y.yyyy, ...</string>
+    <string name="toast1">Valori di X ed Y devono corrispondere uno ad uno</string>
+    <string name="toast2">ERRORE INPUT</string>
+
+</resources>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Linear Regression Calculator</string>
+    <string name="btn1">Calculate Regression Line</string>
+    <string name="btn2">Clear</string>
+    <string name="hint1">Enter X Values saparated by \" , \"</string>
+    <string name="hint2">Enter Y Values separated by \" , \"</string>
+    <string name="toast1">X and Y values must corrispond one-to-one</string>
+    <string name="toast2">INPUT ERROR</string>
+
+</resources>
