@@ -52,8 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 y = y.replace('\n',' ');
                 x = x.replace(',','.');
                 y = y.replace(',','.');
-
-
+                int lin = 1;
 
                 String inx[] = x.split(" ");
                 String iny[] = y.split(" ");
@@ -64,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                             xal.add(Double.parseDouble(s));
                         } catch (Exception e){
                             Toast.makeText(MainActivity.this, R.string.toast2, Toast.LENGTH_SHORT).show();
+                            lin=0;
                         }
                     }
                 }
@@ -73,15 +73,18 @@ public class MainActivity extends AppCompatActivity {
                             yal.add(Double.parseDouble(s));
                         } catch (Exception e){
                             Toast.makeText(MainActivity.this, R.string.toast2, Toast.LENGTH_SHORT).show();
+                            lin=0;
                         }
                     }}
 
-                try{
-                    LinearRegression linearRegression = new LinearRegression(xal,yal);
-                    resultTxt.setText(linearRegression.toString());
-                } catch (IllegalArgumentException e){
-                    Toast.makeText(MainActivity.this, R.string.toast1, Toast.LENGTH_SHORT).show();
-                    resultLayout.setVisibility(View.GONE);
+                if (lin==1){
+                    try{
+                        LinearRegression linearRegression = new LinearRegression(xal,yal);
+                        resultTxt.setText(linearRegression.toString());
+                    } catch (IllegalArgumentException e){
+                        Toast.makeText(MainActivity.this, R.string.toast1, Toast.LENGTH_SHORT).show();
+                        resultLayout.setVisibility(View.GONE);
+                    }
                 }
 
                 try {
