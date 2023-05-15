@@ -48,26 +48,33 @@ public class MainActivity extends AppCompatActivity {
                 ArrayList<Double> xal= new ArrayList<Double>();
                 ArrayList<Double> yal= new ArrayList<Double>();
 
-                String inx[] = x.split(",");
-                String iny[] = y.split(",");
+                x = x.replace('\n',' ');
+                y = y.replace('\n',' ');
+                x = x.replace(',','.');
+                y = y.replace(',','.');
 
-                for (int i=0; i<inx.length; i++){
-                    try {
-                        xal.add(Double.parseDouble(inx[i].strip()));
-                    } catch (Exception e) {
-                        Toast.makeText(MainActivity.this, R.string.toast2, Toast.LENGTH_SHORT).show();
-                        resultLayout.setVisibility(View.GONE);
-                    }
 
-                }
-                for (int i=0; i<iny.length; i++){
-                    try {
-                        yal.add(Double.parseDouble(iny[i].strip()));
-                    } catch (Exception e) {
-                        Toast.makeText(MainActivity.this, R.string.toast2, Toast.LENGTH_SHORT).show();
-                        resultLayout.setVisibility(View.GONE);
+
+                String inx[] = x.split(" ");
+                String iny[] = y.split(" ");
+
+                for (String s : inx) {
+                    if (!s.isBlank()) {
+                        try{
+                            xal.add(Double.parseDouble(s));
+                        } catch (Exception e){
+                            Toast.makeText(MainActivity.this, R.string.toast2, Toast.LENGTH_SHORT).show();
+                        }
                     }
                 }
+                for (String s : iny) {
+                    if (!s.isBlank()) {
+                        try{
+                            yal.add(Double.parseDouble(s));
+                        } catch (Exception e){
+                            Toast.makeText(MainActivity.this, R.string.toast2, Toast.LENGTH_SHORT).show();
+                        }
+                    }}
 
                 try{
                     LinearRegression linearRegression = new LinearRegression(xal,yal);
